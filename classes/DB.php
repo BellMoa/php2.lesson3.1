@@ -7,7 +7,7 @@ class DB
         return mysqli_connect('localhost','root','','test');
     }
 
-    public function getAll($sql,$class ='stdClass'){
+    public function querry($sql, $class ='stdClass'){
         $resource = $this->connectToDB();
         $result = mysqli_query($resource,$sql);
 
