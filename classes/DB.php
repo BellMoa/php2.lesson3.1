@@ -7,7 +7,7 @@ class DB
         return mysqli_connect('localhost','root','','test');
     }
 
-    public function getAll($sql){
+    public function getAll($sql,$class ='stdClass'){
         $resource = $this->connectToDB();
         $result = mysqli_query($resource,$sql);
 
@@ -17,7 +17,7 @@ class DB
 
         $tmp = [];
 
-             while($row = mysqli_fetch_object($result)){
+             while($row = mysqli_fetch_object($result,$class)){
             $tmp[] = $row;
              }
 
